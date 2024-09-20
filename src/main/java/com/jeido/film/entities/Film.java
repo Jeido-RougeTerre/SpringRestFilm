@@ -21,7 +21,10 @@ public class Film {
     private UUID id;
     private String name;
     private LocalDate releaseDate;
+
+    @Column(columnDefinition = "text")
     private String description;
+
     private Duration duration;
     private String genre;
 

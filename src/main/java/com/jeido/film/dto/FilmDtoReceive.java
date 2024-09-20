@@ -21,7 +21,7 @@ public class FilmDtoReceive {
 
     private LocalDate releaseDate;
 
-    @Max(255)
+    @Max(2000)
     private String description;
 
     private Duration duration;
