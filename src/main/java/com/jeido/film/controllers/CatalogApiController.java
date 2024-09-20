@@ -9,7 +9,6 @@ import com.jeido.film.entities.Film;
 import com.jeido.film.services.DirectorService;
 import com.jeido.film.services.FilmService;
 import com.jeido.film.util.Genre;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +47,7 @@ public class CatalogApiController {
 
 
     @PostMapping("film")
-    public ResponseEntity<FilmDtoSend> addFilm(@Valid @RequestBody FilmDtoReceive filmDtoReceive) {
+    public ResponseEntity<FilmDtoSend> addFilm(@Validated @RequestBody FilmDtoReceive filmDtoReceive) {
         return ResponseEntity.status(HttpStatus.CREATED).body(FilmDtoSend.of(filmService.save(filmDtoReceive)));
     }
 
