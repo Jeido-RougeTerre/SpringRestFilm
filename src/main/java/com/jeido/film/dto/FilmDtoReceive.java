@@ -1,5 +1,6 @@
 package com.jeido.film.dto;
 
+import com.jeido.film.util.Genre;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -26,8 +27,8 @@ public class FilmDtoReceive {
 
     private Duration duration;
 
-    @Max(255)
-    private String genre;
+
+    private Genre genre;
 
     @NotNull
     private UUID directorId;

@@ -7,6 +7,7 @@ import com.jeido.film.entities.Director;
 import com.jeido.film.entities.Film;
 import com.jeido.film.services.DirectorService;
 import com.jeido.film.services.FilmService;
+import com.jeido.film.util.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +39,7 @@ public class CatalogApiController {
                     LocalDate.now(),
                     "Bien",
                     Duration.ofMinutes(145L),
-                    "TEST",
+                    Genre.COMEDY,
                     UUID.fromString("e32a16c9-5965-4f5a-8bd9-2576bd995b05")
             ));
         }

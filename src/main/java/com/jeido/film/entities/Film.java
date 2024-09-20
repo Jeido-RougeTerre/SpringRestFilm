@@ -1,5 +1,6 @@
 package com.jeido.film.entities;
 
+import com.jeido.film.util.Genre;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +27,9 @@ public class Film {
     private String description;
 
     private Duration duration;
-    private String genre;
+
+    @Enumerated
+    private Genre genre;
 
     @ManyToOne
     @JoinColumn(name = "director_id")
