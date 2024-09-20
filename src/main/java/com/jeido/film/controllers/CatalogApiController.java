@@ -68,7 +68,7 @@ public class CatalogApiController {
         List<Director> directors = directorService.findAll();
         List<DirectorDtoSend> directorDtoSends = new ArrayList<>();
         for (Director director : directors) {
-            directorDtoSends.add(DirectorDtoSend.of(director));
+            directorDtoSends.add(DirectorDtoSend.of(director, filmService));
         }
 
         return ResponseEntity.ok(directorDtoSends);
@@ -77,7 +77,7 @@ public class CatalogApiController {
     @GetMapping("director/{id}")
     public ResponseEntity<DirectorDtoSend> director(@PathVariable("id") UUID id) {
         Director director = directorService.findById(id);
-        DirectorDtoSend directorDtoSend = DirectorDtoSend.of(director);
+        DirectorDtoSend directorDtoSend = DirectorDtoSend.of(director, filmService);
         return ResponseEntity.ok(directorDtoSend);
     }
 }
